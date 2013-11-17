@@ -1,7 +1,8 @@
 Treebook::Application.routes.draw do
-  resources :statuses
+  devise_for :users
 
-  root :to 'statuses#index'
+  resources :statuses
+  root to: 'Statuses#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
