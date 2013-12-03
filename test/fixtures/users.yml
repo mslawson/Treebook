@@ -1,7 +1,6 @@
-matt:
-  first_name: "Matt"
-  last_name: "Slawson"
-  email: "mdslawson@gmail.com"
-  profile_name: "mdslawson"
-  password: "Jordan23"
-  password_confirmation: "Jordan23"
+ matt:
+   first_name: "Matt"
+   last_name: "Slawson"
+   email: "mdslawson@gmail.com"
+   profile_name: "mdslawson"
+   
