@@ -1,6 +1,11 @@
- matt:
-   first_name: "Matt"
-   last_name: "Slawson"
-   email: "mdslawson@gmail.com"
-   profile_name: "mdslawson"
-   
+matt:
+  first_name: "Matt"
+  last_name: "Slawson"
+  email: "mdslawson@gmail.com"
+  profile_name: "mdslawson"
+
+jim:
+  first_name: "Jim"
+  last_name: "Hoskins"
+  email: "jim@teamtreehouse.com"
+  profile_name: "jimh"

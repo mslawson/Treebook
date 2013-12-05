@@ -13,7 +13,7 @@ Treebook::Application.routes.draw do
       get 'feed', :to => "statuses#index", as: :feed
   root to: 'Statuses#index'
 
-
+  get '/:id', to: 'profiles#show'
 
 
 
