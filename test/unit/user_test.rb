@@ -44,6 +44,10 @@ class UserTest < ActiveSupport::TestCase
     assert users(:matt).friends.include?(users(:mike))
   end
 
+  test "that calling to param on a user returns the profile name" do 
+    assert_equal "mdslawson", users(:matt).to_param
+  end
+
 
 
  #  test "a user should have a profile name without spaces" do
