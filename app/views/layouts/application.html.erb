@@ -10,20 +10,19 @@
 	<div class="navbar navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container">
-				<a class="brand" href="#"> Treebook </a>
+				<a href="#" class="brand"> Treebook</a>
 				<ul class="nav">
 					<li><%= link_to "All Statuses", feed_path %></li>
-					<ul class="nav pull-right">
-						<% if user_signed_in?  %>
-							<li><%= link_to current_user.full_name, edit_user_registration_path %></li>
-							<li><%= link_to "Log Out", logout_path %></li>
-						<% else %>
-							<li> <%= link_to "Register", register_path %>
-							</li>
-							<li><%= link_to "Log In", login_path %>
-							</li>
-						<% end %>
-					</ul>
+				</ul>
+				<ul class="nav pull-right">
+					<% if user_signed_in? %>
+						<li><%= link_to current_user.full_name, edit_user_registration_path %></li>
+						<li><%= link_to "Log Out", logout_path %><li>
+					<% else %>
+						<li><%= link_to "Register", register_path %></li>
+						<li><%= link_to "Log in", login_path %></li>
+					<% end %>
+
 				</ul>
 			</div>
 		</div>
@@ -31,14 +30,12 @@
 	<div class="container">
 		<% flash.each do |type, message| %>
 			<div class="alert <%= flash_class type %>">
-				<button class="close" data-dismiss="alert"></button>
+				<button class="close" data-dismiss="alert">×</button>
 				<%= message %>
 			</div>
 		<% end %>
-				
-
+		    
 		<%= yield %>
-	
 	</div>
 </body>
 </html>
