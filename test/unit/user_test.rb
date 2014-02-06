@@ -49,4 +49,18 @@ class UserTest < ActiveSupport::TestCase
     user.profile_name = 'jasonseifer_1'
     assert user.valid?
   end
+
+  test "that no error is raised when trying to access a friend list" do
+    assert_nothing_raised do 
+      users(:jason).friends
+    end
+  end
+
+# Currently at 5:57 on Working with Associations
+  test "that creating friendships on a user works" do 
+    users(:jason).friends << users(:mike)
+    users(:jason).friends.reload
+    assert users(:jason).friends.include?(users(:mike))
+  end
+
 end
