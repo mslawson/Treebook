@@ -15,6 +15,8 @@ Treebook::Application.routes.draw do
 
   get '/:id', to: 'profiles#show'
 
+  resources :user_friendships
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
