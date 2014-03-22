@@ -7,6 +7,7 @@ gem 'rails', '3.2.6'
 
 gem 'devise'
 gem 'simple_form'
+gem 'state_machine'
 
 group :development, :test do
 	gem 'sqlite3'
@@ -31,6 +32,7 @@ end
 gem 'jquery-rails'
 
 group :test do
+  gem 'factory_girl_rails'
   gem 'shoulda'
   gem 'shoulda-matchers'
   gem 'shoulda-context'
