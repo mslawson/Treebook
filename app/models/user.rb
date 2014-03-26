@@ -34,8 +34,17 @@ class User < ActiveRecord::Base
   has_many :requested_user_friendships, class_name: 'UserFriendship',
                                       foreign_key: :user_id,
                                       conditions: { state: 'requested'}
-  has_many :requested_friends, through: :pending_user_friendships, source: :friend                                      
-                                    
+  has_many :requested_friends, through: :requested_user_friendships, source: :friend                                      
+                                      
+  has_many :blocked_user_friendships, class_name: 'UserFriendship',
+                                      foreign_key: :user_id,
+                                      conditions: { state: 'blocked'}
+  has_many :blocked_friends, through: :blocked_user_friendships, source: :friend                                      
+  
+  has_many :accepted_user_friendships, class_name: 'UserFriendship',
+                                      foreign_key: :user_id,
+                                      conditions: { state: 'accepted'}
+  has_many :accepted_friends, through: :accepted_user_friendships, source: :friend   
 
 
   def full_name
@@ -52,6 +61,10 @@ class User < ActiveRecord::Base
 
   def to_param
     profile_name
+  end
+
+  def has_blocked?(other_user)
+    blocked_friends.include?(other_user)
   end
 
 end
