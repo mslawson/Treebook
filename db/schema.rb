@@ -11,16 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140509183406) do
+ActiveRecord::Schema.define(:version => 20140520210701) do
 
   create_table "documents", :force => true do |t|
     t.integer  "user_id"
-    t.datetime "created_at",                  :null => false
-    t.datetime "updated_at",                  :null => false
-    t.string   "add_attachment_file_name"
-    t.string   "add_attachment_content_type"
-    t.integer  "add_attachment_file_size"
-    t.datetime "add_attachment_updated_at"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+    t.datetime "attachment_updated_at"
   end
 
   add_index "documents", ["user_id"], :name => "index_documents_on_user_id"
