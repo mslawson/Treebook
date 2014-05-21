@@ -11,6 +11,7 @@ gem 'state_machine'
 gem 'draper', '~> 1.0'
 gem 'js-routes'
 gem 'paperclip'
+gem 'rmagick', '2.13.2'
 
 group :development do
   gem 'thin'
