@@ -1,4 +1,10 @@
 Treebook::Application.routes.draw do
+  resources :pictures
+
+
+  resources :albums
+
+
   get "profiles/show"
 
   as :user do
