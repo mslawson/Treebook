@@ -1,24 +1,16 @@
+<%= page_header do %>
 <h1>Listing albums</h1>
-
-<table>
-  <tr>
-    <th>User</th>
-    <th>Title</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @albums.each do |album| %>
-  <tr>
-    <td><%= album.user %></td>
-    <td><%= album.title %></td>
-    <td><%= link_to 'Show', album %></td>
-    <td><%= link_to 'Edit', edit_album_path(album) %></td>
-    <td><%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
 <% end %>
-</table>
+<table>
+
+<ul class="thumbnails">
+  <% @albums.each do |album| %>
+  <li class="span3">
+    <%= link_to album_thumbnail(album),album_pictures_path(album) %><br />
+    <%= link_to "View Album", album_pictures_path(@user, album) %>
+  </li>
+  <% end %>
+</ul>
 
 <br />
 

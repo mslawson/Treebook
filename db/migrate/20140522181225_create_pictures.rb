@@ -10,5 +10,6 @@ class CreatePictures < ActiveRecord::Migration
     end
     add_index :pictures, :album_id
     add_index :pictures, :user_id
+    add_attachment :pictures, :asset
   end
 end

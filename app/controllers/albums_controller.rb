@@ -1,4 +1,7 @@
 class AlbumsController < ApplicationController
+  before_filter :authenticate_user!, only: [:create, :edit, :update, :new, :destroy]
+  before_filter :find_user
+  before_filter :find_album, only: [:edit, :update, :destroy, :show]
   # GET /albums
   # GET /albums.json
   def index
@@ -24,7 +27,7 @@ class AlbumsController < ApplicationController
   # GET /albums/new
   # GET /albums/new.json
   def new
-    @album = Album.new
+    @album = current_user.albums.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -40,7 +43,7 @@ class AlbumsController < ApplicationController
   # POST /albums
   # POST /albums.json
   def create
-    @album = Album.new(params[:album])
+    @album = current_user.albums.new(params[:album])
 
     respond_to do |format|
       if @album.save
@@ -79,5 +82,18 @@ class AlbumsController < ApplicationController
       format.html { redirect_to albums_url }
       format.json { head :no_content }
     end
+  end
+
+  def url_options
+    {profile_name: params[:profile_name]}.merge(super)
+  end
+
+  private
+  def find_user
+    @user = User.find_by_profile_name(params[:profile_name])
+  end
+
+  def find_album
+    @album = current_user.albums.find(params[:id])
   end
 end
