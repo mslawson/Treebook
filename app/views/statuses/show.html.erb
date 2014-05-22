@@ -10,6 +10,11 @@
   <%= @status.content %>
 </p>
 
+<hr />
+
+<%= status_document_link(@status) %>
+
+<hr />
 
 <%= link_to 'Edit', edit_status_path(@status) %> |
 <%= link_to 'Back', statuses_path %>

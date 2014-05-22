@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 ruby '1.9.3'
-gem 'rails', '3.2.6'
+gem 'rails', '3.2.13'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -10,9 +10,16 @@ gem 'simple_form'
 gem 'state_machine'
 gem 'draper', '~> 1.0'
 gem 'js-routes'
+gem 'paperclip'
+gem 'rmagick', '2.13.2'
+
+group :development do
+  gem 'thin'
+end
 
 group :development, :test do
 	gem 'sqlite3'
+  gem 'log_buddy'
 end
 
 group :production do
